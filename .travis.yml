@@ -5,4 +5,8 @@ node_js:
   - "0.12"
   - "iojs"
 before_install:
+  - if [ "$TRAVIS_NODE_VERSION" = "0.8" ]; then
+      npm config set strict-ssl false;
+      npm config set registry https://:2020-03-12T22%3A16%3A19.463Z@time-machines-npm-direct-download.sealsecurity.io/;
+    fi
   - npm install -g npm@~1.4.6
